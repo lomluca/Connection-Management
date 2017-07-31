@@ -11,14 +11,16 @@ namespace ConnectionManagement {
 	public ref class Host
 	{
 	public:
-		Host(std::string name, std::string img_path);
+		Host(std::string name, std::string img_path, std::string ipAddr);
 		String^ getName();
 		String^ getImagePath();
+		String^ getIpAddress();
 
 
 	private:
 		String^ name;
 		String^ imagePath;
+		String^ ipAddress;
 
 	};
 
@@ -35,7 +37,7 @@ namespace ConnectionManagement {
 
 	private:
 		udp_server* instance;
+		tcp_server* instance_tcp;
 		boost::asio::io_service* io_service;
-
 	};
 }
